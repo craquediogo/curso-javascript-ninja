@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-var craque;
+var craque={};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -46,7 +46,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-pessoa.andar = function(x){ pessoa.caminhouQuantosMetros = x; pessoa.andando = true; }
+pessoa.andar = function(x){ pessoa.caminhouQuantosMetros += x; pessoa.andando = true; }
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -174,8 +174,6 @@ Quantos metros a pessoa andou? (Use uma instrução para responder e comentário
 inline ao lado da instrução para mostrar a resposta retornada)
 */
 caminhouQuantosMetros: 40
-
-
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
 Crie um método para o objeto `pessoa` chamado `apresentacao`. Esse método deve
@@ -193,9 +191,20 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-pessoa.apresentacao = pessoa.nomeCompleto + "tenho " + pessoa.idade +  " anos, " +
- pessoa.altura  + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!"
+pessoa.apresentacao = function() {
+  var sexo = "o";
+  var idadeAnos = "anos";  
+  var metrosCaminhado = "metros";
+  
+  if(pesoa.sexo === "Feminino") { sexo = "a" }
+  if(pesoa.idade === 1) { idadeAnos = "a" }
+  if(pessoa.caminhouQuantosMetros === 1) {metrosCaminhado = "metro"}
+  
+ return pessoa.nomeCompleto + "tenho " + pessoa.idade +  " idadeAnos, " +
+ pessoa.altura  + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + metrosCaminhado + " !"
+}
+
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao()
 ```
